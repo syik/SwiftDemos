@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Font" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="1xQ-cD-muq">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <string key="text">
+
+这里有关于主播的一切数据:
+弹幕波动、活跃时间、高频词汇、在线人数波动、关注波动、粉丝等级分布、
+粉丝发言次数排行、礼物价值分布、主播体重增长、还能看到土豪们的历史发言!
+
+实时看弹幕更省心:
+速度控制:  粉丝沟通更轻松
+语义分析:  粉丝都在说什么, 一目了然
+用户关注:  土豪说话, 怎能错过
+关键词屏蔽:  还怕带节奏, 你Out了
+用户屏蔽:  保持心情, 愉快直播</string>
+                                <color key="textColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="097-U2-Mpl">
+                                <rect key="frame" x="147" y="531" width="80" height="80"/>
+                                <color key="backgroundColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="1zl-2x-rgb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <state key="normal" title="换">
+                                    <color key="titleColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="changeBtnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Umv-IB-3zD"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="1xQ-cD-muq" secondAttribute="trailing" id="3DL-w5-qfw"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="097-U2-Mpl" secondAttribute="bottom" constant="56" id="JLy-93-SqM"/>
+                            <constraint firstItem="097-U2-Mpl" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="511" id="PiN-zk-9WT"/>
+                            <constraint firstItem="1xQ-cD-muq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="SM3-XY-YE8"/>
+                            <constraint firstItem="1xQ-cD-muq" firstAttribute="centerX" secondItem="097-U2-Mpl" secondAttribute="centerX" id="UKt-3O-N0h"/>
+                            <constraint firstItem="1xQ-cD-muq" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="dEE-KI-oCO"/>
+                            <constraint firstItem="1xQ-cD-muq" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="waG-KT-WZl"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="changeBtn" destination="097-U2-Mpl" id="BIk-fz-uJz"/>
+                        <outlet property="textView" destination="1xQ-cD-muq" id="txb-Ww-Ohk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="123.68815592203899"/>
+        </scene>
+    </scenes>
+</document>
