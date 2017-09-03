@@ -96,7 +96,7 @@
 				TargetAttributes = {
 					388CA7141F5A4D5100D7C70F = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = ADESGAWMRV;
+						DevelopmentTeam = 2DEDNW2H7U;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -259,7 +259,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = ADESGAWMRV;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 2DEDNW2H7U;
 				INFOPLIST_FILE = SimpleAnimation/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Zj.SimpleAnimation;
@@ -272,7 +273,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = ADESGAWMRV;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 2DEDNW2H7U;
 				INFOPLIST_FILE = SimpleAnimation/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Zj.SimpleAnimation;
@@ -300,6 +302,7 @@
 				388CA7291F5A4D5100D7C70F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
