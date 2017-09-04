@@ -11,7 +11,7 @@ import UIKit
 let contentCellReusedId = "contentCellReusedId"
 let screenWidth = UIScreen.main.bounds.size.width
 
-class ContentTableViewController: UITableViewController {
+class ContentTableViewController: UITableViewController, UIViewControllerTransitioningDelegate {
     
     var menuBtn: UIButton?
     var navigationBar: UIView?
@@ -75,13 +75,25 @@ class ContentTableViewController: UITableViewController {
         tableView.backgroundColor = UIColor.black
         tableView.rowHeight = 300
         tableView.separatorStyle = .none
-        tableView.contentInset = UIEdgeInsets(top: 44, left: 0, bottom: 0, right: 0)
+        tableView.contentInset = UIEdgeInsets(top: 64, left: 0, bottom: 0, right: 0)
     }
 
     func menuBtnClicked() {
     
         let menuVC = MenuTableViewController()
-        self.present(menuVC, animated: true, completion: nil)
+        menuVC.transitioningDelegate = self
+        
+        present(menuVC, animated: true, completion: nil)
+    }
+    
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+
+        return TransitionManager(type: .present)
+    }
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        
+        return TransitionManager(type: .dismiss)
     }
     
     // MARK: - Table view data source

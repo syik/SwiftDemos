@@ -21,10 +21,22 @@ class MenuTableViewController: UITableViewController {
         tableView.backgroundColor = UIColor.clear
         tableView.rowHeight = 50
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReusedId)
+        tableView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        let cell = tableView.visibleCells.first
+        cell?.superview?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(menuDismiss)))
     }
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
+    }
+    
+    func menuDismiss() {
+        self.dismiss(animated: true, completion: nil)
     }
     
     // MARK: - Table view data source
@@ -35,7 +47,6 @@ class MenuTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return statusArray.count
     }
-
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellReusedId, for: indexPath)

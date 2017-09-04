@@ -13,10 +13,14 @@ enum animtionType: Int {
 }
 
 class TransitionManager: NSObject, UIViewControllerAnimatedTransitioning, UIViewControllerTransitioningDelegate {
-
     
     let duration = 1.0
     var type: animtionType?
+    
+    required init(type: animtionType) {
+        super.init()
+        self.type = type
+    }
     
     //UIViewControllerAnimatedTransitioning
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
@@ -36,19 +40,49 @@ class TransitionManager: NSObject, UIViewControllerAnimatedTransitioning, UIView
     
     func present(using transitionContext: UIViewControllerContextTransitioning) {
         
-        let fromView = transitionContext.view(forKey: UITransitionContextViewKey.from)!
-        let toView = transitionContext.view(forKey: UITransitionContextViewKey.to)!
+        let fromView = transitionContext.view(forKey: .from)!
+        let toView = transitionContext.view(forKey: .to)!
         
         let container = transitionContext.containerView
-        let moveDown = CGAffineTransform(translationX: 0, y: 350)
+        let moveDown = CGAffineTransform(translationX: 0, y: 370)
         
+        toView.transform = CGAffineTransform(translationX: 0, y: -50)
         let snapshot = fromView.snapshotView(afterScreenUpdates: true)
         container.addSubview(toView)
         container.addSubview(snapshot!)
-        toView.transform =
+        
+        UIView.animate(withDuration: duration, animations: {
+            
+            snapshot!.transform = moveDown
+            toView.transform = CGAffineTransform(translationX: 0, y: -20)
+    
+        }, completion: { finished in
+        
+            transitionContext.completeTransition(true)
+        })
     }
     
     func dismiss(using transitionContext: UIViewControllerContextTransitioning) {
+       
+        let fromView = transitionContext.view(forKey: .from)!
+        let toView = transitionContext.view(forKey: .to)!
         
+        let container = transitionContext.containerView
+        let moveDown = CGAffineTransform(translationX: 0, y: 370)
+        
+        toView.transform = moveDown
+        let snapshot = fromView.snapshotView(afterScreenUpdates: true)
+        container.addSubview(snapshot!)
+        container.addSubview(toView)
+        
+        UIView.animate(withDuration: duration, animations: {
+            
+            snapshot!.transform = .identity
+            toView.transform = .identity
+            
+        }, completion: { finished in
+            
+            transitionContext.completeTransition(true)
+        })
     }
 }
